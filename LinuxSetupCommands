@@ -23,5 +23,23 @@ $ sudo su
 # iface enp0s8 inet static
 # address <IP ADRESS>
 
+//Edit Yaml file at /etc/netplan
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens18:
+    dhcp4: no
+    addresses:
+      - <Enter Ip address>/24
+    gateway4: 192.168.2.1
+    nameservers:
+      addresses: [192.168.2.19]
+
+//Apply netplan command
+sudo netplan apply
+
+
+
 //Install SSH Server
 # sudo apt-get install openssh-server
