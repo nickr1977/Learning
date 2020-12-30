@@ -1,0 +1,27 @@
+// Update the repositories
+$ sudo su
+# apt-get update
+
+//Turn off Swap Space
+# swapoff -a
+# nano /etc/fstab
+
+//Update the Hostname
+# nano /etc/hostname
+
+//IP address
+# iconfig
+
+//Update the host file
+# nano /etc/hosts
+
+//Set a static IP address
+# nano etc/network/interfaces
+
+//add to above file
+# auto enp0s8
+# iface enp0s8 inet static
+# address <IP ADRESS>
+
+//Install SSH Server
+# sudo apt-get install openssh-server
