@@ -1,12 +1,6 @@
 # Before I do anything on Linux, I do these first...
 
 
-[![Before I do anything on Linux, I do these first...](http://img.youtube.com/vi/ZsjK4VDopiE/0.jpg)](https://www.youtube.com/watch?v=ZsjK4VDopiE "Before I do anything on Linux, I do these first...")
-
-After setting up my Linux servers, there are a few things I do before I use them for their intended purpose.  This ranges from security, to tools, to config.  Join me as we set up our first Linux server in this tutorial and walk through setting it up proper (and maybe some bonus items sprinkled in).
-
-
-
 ## Update
 
 ```
@@ -76,7 +70,7 @@ network:
   ethernets:
     ens18:
      dhcp4: no
-     addresses: 
+     addresses:
         - 192.168.0.222/24
      gateway4: 192.168.0.1
      nameservers:
@@ -117,11 +111,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ## Time Zone
 
-Check time zone: 
+Check time zone:
 
 `timedatectl`
 
-Change time zone: 
+Change time zone:
 
 `sudo timedatectl set-timezone`
 
