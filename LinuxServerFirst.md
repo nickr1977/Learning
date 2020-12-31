@@ -171,3 +171,8 @@ check status
 
 
 `sudo fail2ban-client status sshd`
+
+
+Add SSH key from mickey
+
+`ssh-copy-id SYSUSER@x.x.x.x`

@@ -43,3 +43,6 @@ sudo netplan apply
 
 //Install SSH Server
 # sudo apt-get install openssh-server
+
+//Copy SSH Key out to server
+ssh-copy-id username@x.x.x.x
