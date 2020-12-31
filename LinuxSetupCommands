@@ -23,7 +23,7 @@ $ sudo su
 # iface enp0s8 inet static
 # address <IP ADRESS>
 
-//Edit Yaml file at /etc/netplan
+//Edit Yaml file at /etc/netplan/01-netcfg.yaml
 network:
   version: 2
   renderer: networkd
@@ -39,7 +39,6 @@ network:
 
 //Apply netplan command
 sudo netplan apply
-
 
 
 //Install SSH Server
