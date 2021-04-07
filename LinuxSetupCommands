@@ -4,16 +4,20 @@ $ sudo su
 
 // Turn off Swap Space
 # swapoff -a
+// Comment out the swap.img file
 # nano /etc/fstab
 
 //Update the Hostname
 # nano /etc/hostname
 
-//IP address
-# iconfig
-
 //Update the host file
 # nano /etc/hosts
+
+//Install nettools
+apt install net-tools
+
+//IP address
+# ifconfig
 
 //Set a static IP address
 # nano etc/network/interfaces
@@ -29,17 +33,26 @@ network:
   renderer: networkd
   ethernets:
     ens18:
-    dhcp4: no
-    addresses:
-      - <Enter Ip address>/24
-    gateway4: 192.168.2.1
-    nameservers:
-      search: [rodriquez.local]
-      addresses: [192.168.2.19]
+      dhcp4: no
+      addresses:
+        - <Enter Ip address>/24
+      gateway4: 192.168.2.1
+      nameservers:
+        search: [rodriquez.local]
+        addresses: [192.168.2.19]
 
 //Apply netplan command
 sudo netplan apply
 
+//Restart the network service
+systemctl restart systemd-networkd
 
 //Install SSH Server
 # sudo apt-get install openssh-server
+
+//Generate RSA Key
+ssh-keygen -t rsa
+
+//Copy SSH Key out to server
+// notnick@192.168.2.20
+ssh-copy-id username@x.x.x.x
